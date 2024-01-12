@@ -34,7 +34,7 @@ export default function TotalItems() {
               <tr key={product.id}>
                 <td>{product.id}</td>
                 <td>{product.name}</td>
-                <td>{product.quantity}</td>
+                <td>{product.quantity} Unid.</td>
                 <td className="td-table">{product.category}</td>
                 <div className="btn-group">
                   <Link to={`/products/${product.id}`}>

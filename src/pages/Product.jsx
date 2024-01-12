@@ -13,12 +13,6 @@ export default function Product() {
   // utiliza o ID para encontrar o objeto correspondente na lista de itens('listItems').  A função find percorre a lista e retornar o primeiro item cujo ID, convertido para uma string, corresponda ao ID da URL (productId).
   const product = listItems.find((item) => item.id.toString() === productId)
 
-  if (!product) {
-    return (
-      <h2>Oops... Esse produto não foi encontrado.</h2>
-    )
-  }
-
   const formatedDate = (date) => {
     return dayjs(date, "DD/MM/YYYY").format("DD/MM/YYYY, HH:mm")
 
@@ -56,10 +50,13 @@ export default function Product() {
             <Link to={`/update/${product.id}`}>
               <button className="btn-att" onClick={handleUpdateClick}>Atualizar</button>
             </Link>
-            <button
-              className="btn-delete"
-              onClick={() => removeProduct(product.id)}
-            >Excluir</button>
+
+            <Link to={`/totalItems`}>
+              <button
+                className="btn-delete"
+                onClick={() => removeProduct(product.id)}
+              >Excluir</button>
+            </Link>
           </>
         </div>
 
